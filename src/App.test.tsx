@@ -1,7 +1,7 @@
 import { screen, waitFor } from '@testing-library/react'
 import matchers from '@testing-library/jest-dom/matchers'
 import { expect, describe, test } from 'vitest'
-import { logScreen, renderWithRoute } from './utils/testUtils'
+import {  renderWithRoute } from './utils/testUtils'
 import { path } from './constants/path'
 
 expect.extend(matchers)
@@ -49,6 +49,5 @@ describe('App', () => {
     await waitFor(() => {
       expect(screen.queryByText(/Bạn đã có tài khoản?/i)).toBeInTheDocument()
     })
-    await logScreen()
   })
 })
