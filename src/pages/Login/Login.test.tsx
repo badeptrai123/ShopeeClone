@@ -1,6 +1,6 @@
 import { screen, waitFor, fireEvent } from '@testing-library/react'
 import { path } from 'src/constants/path'
-import { logScreen, renderWithRoute } from 'src/utils/testUtils'
+import { renderWithRoute } from 'src/utils/testUtils'
 import { describe, it, expect, beforeAll } from 'vitest'
 import matchers from '@testing-library/jest-dom/matchers'
 
@@ -62,7 +62,6 @@ describe('Login', () => {
     })
 
     fireEvent.submit(submitButton)
-    await logScreen()
     await waitFor(() => {
       expect(document.querySelector('title')?.textContent).toBe('Trang chủ | Shopee Clone')
     })
